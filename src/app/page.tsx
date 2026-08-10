@@ -338,24 +338,24 @@ export default function Home() {
                 <div className="font-body flex items-center gap-4 text-[10px] tracking-[0.2em] text-[#f3a99c]">
                   <span>01</span>
                   <span className="h-px w-8 bg-current" />
-                  <span>CLOUD APPLICATION · PRODUCT WORKSHOP</span>
+                  <span>PRIVATE R&amp;D SYSTEM · AGENTS + EXTRACTION</span>
                 </div>
                 <h3 className="font-display mt-6 text-4xl sm:text-6xl">Building Buddy</h3>
                 <p className="font-body mt-5 text-xl leading-8 text-[#efdfb4]/88 sm:text-2xl">
-                  Project management, extraction pipeline, and collaborative R&amp;D workspace.
+                  Tool-using agents, project management, source-pinned extraction, and collaborative R&amp;D.
                 </p>
                 <p className="font-body mt-5 max-w-xl text-[15px] leading-7 text-[#efdfb4]/62 sm:text-base">
-                  Building Buddy combines project management and file extraction, with regulatory
-                  and PMO agents working across the inbox. It tracks CAPEX and project progress in
-                  a leadership-friendly dashboard. I use it to workshop features, refine scope and
-                  specifications, then actualize the strongest workflows in iOS and desktop
-                  applications.
+                  Building Buddy combines project management and source-pinned file extraction with
+                  regulatory and PMO agents working across the inbox. Agent actions are authenticated,
+                  bounded, and reviewable; consequential updates stay reversible. The application tracks
+                  CAPEX, milestones, dependencies, risks, and project progress in a leadership-friendly
+                  dashboard.
                 </p>
                 <div className="font-body mt-8 flex flex-wrap gap-2 text-[#efdfb4]/75">
                   <Tag>Project management</Tag>
-                  <Tag>Extraction pipeline</Tag>
-                  <Tag>PMO agents</Tag>
-                  <Tag>Regulatory agents</Tag>
+                  <Tag>Source-pinned extraction</Tag>
+                  <Tag>Tool calling</Tag>
+                  <Tag>Human review</Tag>
                   <Tag>CAPEX</Tag>
                   <Tag>EN / KR</Tag>
                 </div>
