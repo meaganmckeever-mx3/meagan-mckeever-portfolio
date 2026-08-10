@@ -1,4 +1,5 @@
 import Image from "next/image";
+import SiteNav from "./components/site-nav";
 
 const CREAM = "#efdfb4";
 
@@ -57,10 +58,10 @@ const MORE_WORK = [
   {
     number: "06",
     name: "Echograph",
-    label: "LOCAL-FIRST AI · OPEN SOURCE",
+    label: "LOCAL-FIRST AI · OPEN SOURCE · MISTRAL",
     description:
-      "For meeting recordings, medical dictation, and voice notes: normalize and transcribe audio, then use tonal intelligence to capture emotion and importance. Its hypergraph is my preferred RAG architecture—a working neural structure for order awareness and decision milestones that can become the PMO's oracle.",
-    meta: "274 recordings · 5,107 statements · 75 tests",
+      "For meeting recordings, medical dictation, and voice notes: normalize and transcribe audio, then use tonal intelligence to capture emotion and importance. Its hypergraph is my preferred RAG architecture—a working neural structure for order awareness and decision milestones that can become the PMO's oracle. Its generative stages can now run through Mistral as a configurable backend.",
+    meta: "Mistral Small 4 / Medium 3.5 · function calling · JSON mode · 85 tests",
     href: "https://github.com/meaganmckeever-mx3/echograph",
   },
   {
@@ -83,10 +84,12 @@ const MORE_WORK = [
   {
     number: "09",
     name: "VOID",
-    label: "AI FOOD-SUSTAINABILITY COMPETITION · SIDE PROJECT",
+    label: "AI FOOD-SUSTAINABILITY COMPETITION · IN DEVELOPMENT",
     description:
-      "A circular data-center fermentation concept: model whether recoverable heat from liquid-cooled AI infrastructure can support brewing and distillation, with explicit thermodynamics and source-backed assumptions.",
-    meta: "Thermodynamics · circular systems · tested computation",
+      "A circular data-center fermentation and distillation system. Bou and I planned the process skid and produced the P&ID; the computational study models how recoverable heat from liquid-cooled AI infrastructure can support brewing and distillation.",
+    philosophy:
+      "Open source is part of the method: contributors can challenge our assumptions and improve the installation design. When scoping moves into build, I will publish the data from every test.",
+    meta: "Process skid · P&ID · thermodynamics · heat reuse",
     href: "https://github.com/meaganmckeever-mx3/data-center-distillery",
   },
 ];
@@ -161,7 +164,7 @@ function BuildingBuddyVisual() {
         sizes="(min-width: 1024px) 52vw, 100vw"
         className="h-auto w-full"
       />
-      <figcaption className="font-body flex items-center justify-between gap-4 border-t border-black/10 bg-[#fbfaf5] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-black/45 sm:text-[9px]">
+      <figcaption className="font-body flex items-center justify-between gap-4 border-t border-black/10 bg-[#fbfaf5] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-black/60 sm:text-[9px]">
         <span>Real interface · synthetic demo data</span>
         <span>Project command / Gantt</span>
       </figcaption>
@@ -169,70 +172,60 @@ function BuildingBuddyVisual() {
   );
 }
 
+function BuildingBuddyPipelineVisual() {
+  return (
+    <figure className="overflow-hidden rounded-[1.6rem] bg-[#f4f0e5] shadow-2xl shadow-black/25">
+      <Image
+        src="/images/building-buddy-extraction-pipeline-synthetic.png"
+        alt="Building Buddy extraction pipeline interface using synthetic documents and demo statuses"
+        width={1586}
+        height={992}
+        sizes="(min-width: 1024px) 76vw, 100vw"
+        className="h-auto w-full"
+      />
+      <figcaption className="font-body flex flex-wrap items-center justify-between gap-3 border-t border-black/10 bg-[#fbfaf5] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-black/60 sm:text-[9px]">
+        <span>Representative interface · synthetic demo data</span>
+        <span>Upload / extraction / review / index</span>
+      </figcaption>
+    </figure>
+  );
+}
+
 function ProteinPalVisual() {
   return (
-    <div
-      aria-label="Abstract representation of the Protein Pal interface"
-      className="relative aspect-[16/11] overflow-hidden rounded-[1.6rem] bg-[#100e1f] p-4 text-white shadow-2xl shadow-black/30 sm:p-6"
-    >
-      <div
-        aria-hidden
-        className="absolute inset-0 opacity-70"
-        style={{
-          background:
-            "radial-gradient(50% 55% at 8% 100%, rgba(99,75,189,.72), transparent 100%), radial-gradient(60% 65% at 100% 100%, rgba(30,135,118,.58), transparent 100%)",
-        }}
+    <figure className="overflow-hidden rounded-[1.6rem] bg-[#100e1f] shadow-2xl shadow-black/30">
+      <Image
+        src="/images/protein-pal-synthetic-interface.png"
+        alt="Protein Pal interface using a synthetic formula to show nutrition, protein quality, formulation controls, rule checks, and calculation trace"
+        width={1586}
+        height={992}
+        sizes="(min-width: 1024px) 52vw, 100vw"
+        className="h-auto w-full"
       />
-      <div className="relative flex h-full flex-col rounded-xl border border-white/10 bg-[#171329]/80 p-3 backdrop-blur-sm sm:p-5">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="h-5 w-8 rounded-full bg-[#ff6a13] sm:h-7 sm:w-11" />
-            <span className="text-[9px] font-semibold sm:text-sm">Protein Pal</span>
-          </div>
-          <span className="rounded-full border border-white/15 px-2 py-1 text-[5px] text-white/55 sm:text-[7px]">
-            AUDITABLE CALCULATION
-          </span>
-        </div>
-        <div className="mt-4 grid min-h-0 grow grid-cols-[42%_1fr] gap-2 sm:mt-7 sm:gap-4">
-          <div className="rounded-lg border border-white/10 bg-white/[0.055] p-2.5 sm:p-4">
-            <p className="text-[5px] uppercase tracking-[0.16em] text-white/45 sm:text-[7px]">Formula</p>
-            <p className="mt-1 text-[9px] font-medium sm:text-sm">Plant protein blend</p>
-            <div className="mt-3 space-y-1.5 sm:mt-5 sm:space-y-2.5">
-              {[68, 52, 42, 31].map((width, index) => (
-                <div key={width} className="flex items-center gap-2">
-                  <span className="size-2 rounded-full bg-[#ff6a13]/80" />
-                  <span className="h-1.5 rounded-full bg-white/15" style={{ width: `${width}%` }} />
-                  <span className="ml-auto text-[5px] text-white/35 sm:text-[7px]">{index + 1}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="grid grid-rows-[auto_1fr] gap-2 sm:gap-4">
-            <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              <div className="rounded-lg bg-[#ff6a13] p-2.5 text-[#171329] sm:p-4">
-                <p className="text-[5px] uppercase tracking-wider opacity-60 sm:text-[7px]">Protein quality</p>
-                <p className="mt-1 font-mono text-sm font-semibold sm:text-2xl">RULED</p>
-              </div>
-              <div className="rounded-lg bg-[#efe3bb] p-2.5 text-[#171329] sm:p-4">
-                <p className="text-[5px] uppercase tracking-wider opacity-60 sm:text-[7px]">Nutrition</p>
-                <p className="mt-1 font-mono text-sm font-semibold sm:text-2xl">TRACED</p>
-              </div>
-            </div>
-            <div className="rounded-lg border border-white/10 bg-white/[0.055] p-2.5 sm:p-4">
-              <div className="flex h-full items-end gap-1 sm:gap-2">
-                {[38, 61, 46, 74, 56, 86, 66].map((height, index) => (
-                  <div
-                    key={`${height}-${index}`}
-                    className="grow rounded-t-sm bg-gradient-to-t from-[#7562d3] to-[#ff8b5c]"
-                    style={{ height: `${height}%`, opacity: 0.7 + index * 0.035 }}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+      <figcaption className="font-body flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#100e1f] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-white/55 sm:text-[9px]">
+        <span>Representative interface · synthetic demo data</span>
+        <span>Formulation / nutrition / protein quality / trace</span>
+      </figcaption>
+    </figure>
+  );
+}
+
+function ScientificAISystemVisual() {
+  return (
+    <figure className="overflow-hidden rounded-[1.6rem] bg-[#07172b] shadow-2xl shadow-black/30">
+      <Image
+        src="/images/scientific-ai-system-public-map.png"
+        alt="Public conceptual architecture for an auditable scientific AI system with model, deterministic, and knowledge lanes"
+        width={1672}
+        height={941}
+        sizes="(min-width: 1024px) 76vw, 100vw"
+        className="h-auto w-full"
+      />
+      <figcaption className="font-body flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#07172b] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-white/55 sm:text-[9px]">
+        <span>Public conceptual map · internal details removed</span>
+        <span>Models / scientific tools / physics / knowledge / evaluation</span>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -247,7 +240,7 @@ function ThermalProcessVisual() {
         sizes="(min-width: 1024px) 62vw, 100vw"
         className="h-auto w-full"
       />
-      <figcaption className="font-body flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#111b31] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-white/45 sm:text-[9px]">
+      <figcaption className="font-body flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#111b31] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-white/55 sm:text-[9px]">
         <span>Representative reconstruction · not original solver output</span>
         <span>Steam / condensation / internal cold region</span>
       </figcaption>
@@ -265,35 +258,10 @@ export default function Home() {
         Skip to projects
       </a>
 
+      <SiteNav />
+
       <section id="top" className="relative min-h-svh overflow-hidden" style={{ background: HERO_GRADIENT }}>
         <GrainOverlay strong />
-
-        <header className="absolute inset-x-0 top-0 z-20 flex items-center justify-between px-5 py-7 sm:px-12 sm:py-9">
-          <a
-            href="#top"
-            aria-label="Meagan McKeever, back to top"
-            className="font-display text-base leading-none tracking-[0.15em] sm:text-lg"
-          >
-            MM
-          </a>
-          <nav
-            aria-label="Primary"
-            className="font-body flex items-center gap-3 text-[8px] tracking-[0.08em] sm:gap-8 sm:text-[11px] sm:tracking-[0.2em]"
-          >
-            <a className="opacity-75 transition-opacity hover:opacity-100" href="#projects">
-              PROJECTS
-            </a>
-            <a className="opacity-75 transition-opacity hover:opacity-100" href="#experience">
-              EXPERIENCE
-            </a>
-            <a className="opacity-75 transition-opacity hover:opacity-100" href="#about">
-              ABOUT
-            </a>
-            <a className="opacity-75 transition-opacity hover:opacity-100" href="#contact">
-              CONTACT
-            </a>
-          </nav>
-        </header>
 
         <div className="relative z-20 flex min-h-svh flex-col justify-center px-6 pb-28 pt-32 sm:px-12">
           <p className="font-body mb-5 text-[10px] uppercase tracking-[0.26em] text-[#efdfb4]/65 sm:text-xs">
@@ -307,7 +275,7 @@ export default function Home() {
               letterSpacing: "0.005em",
             }}
           >
-            Meagan M.
+            Meagan
             <br />
             McKeever
           </h1>
@@ -358,6 +326,10 @@ export default function Home() {
               ))}
             </div>
 
+            <div className="mt-12">
+              <ScientificAISystemVisual />
+            </div>
+
             <article
               id="building-buddy"
               className="grid gap-12 border-b border-[#efdfb4]/20 py-20 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-16"
@@ -392,6 +364,9 @@ export default function Home() {
                 </p>
               </div>
               <BuildingBuddyVisual />
+              <div className="lg:col-span-2">
+                <BuildingBuddyPipelineVisual />
+              </div>
             </article>
 
             <article
@@ -501,6 +476,11 @@ export default function Home() {
                       <p className="font-body mt-4 text-[14px] leading-6 text-[#efdfb4]/62">
                         {project.description}
                       </p>
+                      {project.philosophy ? (
+                        <p className="font-body mt-5 border-l border-[#f3a99c]/45 pl-4 text-[12px] leading-5 text-[#efdfb4]/54">
+                          {project.philosophy}
+                        </p>
+                      ) : null}
                       <p className="font-body mt-8 text-[9px] leading-5 tracking-[0.1em] text-[#efdfb4]/38">
                         {project.meta}
                       </p>
@@ -547,7 +527,7 @@ export default function Home() {
             <div className="divide-y divide-[#17243e]/20">
               {EXPERIENCE.map((item) => (
                 <article key={item.company} className="grid gap-6 py-10 lg:grid-cols-[0.22fr_0.78fr_1.25fr] lg:gap-12">
-                  <p className="font-body text-[10px] tracking-[0.18em] text-[#17243e]/48">{item.period}</p>
+                  <p className="font-body text-[10px] tracking-[0.18em] text-[#17243e]/65">{item.period}</p>
                   <div>
                     <h3 className="font-display text-2xl leading-tight sm:text-3xl">{item.company}</h3>
                     <p className="font-body mt-2 text-[10px] uppercase leading-5 tracking-[0.13em] text-[#17243e]/52">
@@ -575,7 +555,7 @@ export default function Home() {
               ))}
             </div>
 
-            <div className="font-body mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[9px] uppercase leading-5 tracking-[0.14em] text-[#17243e]/48">
+            <div className="font-body mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[9px] uppercase leading-5 tracking-[0.14em] text-[#17243e]/65">
               <span>Co-inventor · WO2012112700A2</span>
               <span>IFTSA / Disney · First place</span>
               <span>IFTSA / Mars · First place</span>
@@ -628,9 +608,9 @@ export default function Home() {
                     />
                   </span>
                   <span className="flex flex-col justify-center p-7 sm:p-9">
-                    <span className="font-body text-[9px] uppercase tracking-[0.18em] text-[#17243e]/48">Education</span>
+                    <span className="font-body text-[9px] uppercase tracking-[0.18em] text-[#17243e]/65">Education</span>
                     <span className="font-display mt-3 text-3xl leading-tight">Cornell University</span>
-                    <span className="font-body mt-2 text-sm text-[#17243e]/62">Bachelor of Science · Food Science</span>
+                    <span className="font-body mt-2 text-sm text-[#17243e]/72">Bachelor of Science · Food Science</span>
                   </span>
                 </a>
               </div>
@@ -675,7 +655,7 @@ export default function Home() {
               </a>
             </div>
             <p className="font-body text-[9px] tracking-[0.18em] text-[#efdfb4]/45">
-              MEAGAN M. MCKEEVER · 2026
+              MEAGAN MCKEEVER · 2026
             </p>
           </div>
         </div>

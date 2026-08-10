@@ -28,15 +28,27 @@ const endless = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Meagan M. McKeever — Scientific AI & Digital R&D",
+  metadataBase: new URL("https://meagan-mckeever-portfolio.vercel.app"),
+  title: "Meagan McKeever — Scientific AI & Digital R&D",
   description:
     "Food scientist, applied AI builder, and digital R&D lead creating production systems and scientific applications for R&D teams.",
-  authors: [{ name: "Meagan M. McKeever" }],
+  authors: [{ name: "Meagan McKeever" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Meagan M. McKeever — Scientific AI & Digital R&D",
+    title: "Meagan McKeever — Scientific AI & Digital R&D",
     description:
       "Production systems, scientific software, physical modeling, and applied AI for R&D.",
     type: "website",
+    url: "/",
+    siteName: "Meagan McKeever",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meagan McKeever — Scientific AI & Digital R&D",
+    description:
+      "Production systems, scientific software, physical modeling, and applied AI for R&D.",
   },
 };
 
