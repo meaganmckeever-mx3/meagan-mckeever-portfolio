@@ -28,14 +28,14 @@ const endless = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Meagan McKeever — Scientific AI & Digital R&D",
+  title: "Meagan M. McKeever — Scientific AI & Digital R&D",
   description:
-    "Food scientist, applied AI builder, and digital R&D lead building evidence-linked systems that scientists can use.",
-  authors: [{ name: "Meagan McKeever" }],
+    "Food scientist, applied AI builder, and digital R&D lead creating production systems and scientific applications for R&D teams.",
+  authors: [{ name: "Meagan M. McKeever" }],
   openGraph: {
-    title: "Meagan McKeever — Scientific AI & Digital R&D",
+    title: "Meagan M. McKeever — Scientific AI & Digital R&D",
     description:
-      "Scientific software, evidence-linked AI systems, and digital R&D products built for real work.",
+      "Production systems, scientific software, physical modeling, and applied AI for R&D.",
     type: "website",
   },
 };

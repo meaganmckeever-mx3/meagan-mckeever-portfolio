@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const CREAM = "#efdfb4";
 
 const GRAIN =
@@ -16,26 +18,53 @@ const HERO_GRADIENT = [
   "#1a2846",
 ].join(",");
 
+const DIGITAL_STRATEGY = [
+  {
+    label: "Knowledge",
+    text: "Data topology, figure and equation extraction, and RAG.",
+  },
+  {
+    label: "Capture",
+    text: "Structured data capture through production AI, ELNs, and automated testing.",
+  },
+  {
+    label: "Models",
+    text: "Model-orchestration architecture, ML model authoring, and expert-model SFT.",
+  },
+  {
+    label: "Change",
+    text: "Navigating organizational and cross-cultural challenges to champion the digital initiative and foster a more innovative culture.",
+  },
+];
+
 const MORE_WORK = [
   {
-    number: "03",
+    number: "04",
+    name: "Foodcast",
+    label: "PROBABILISTIC FOOD SCIENCE · PRIVATE",
+    description:
+      "A scientific system for exact Bayesian inference, inverse formulation design, regulatory constraints, gray-box process physics, and human escalation when the model should not decide.",
+    meta: "Probabilistic modeling · conformal calibration · 214 tests",
+  },
+  {
+    number: "05",
     name: "Flavor AI evaluation",
     label: "MODEL EVALUATION · AT WORK",
     description:
-      "Building a food-science evaluation for GForceNet Flavor AI: domain correctness, useful formulation direction, failure types, and expert judgment against a fixed blind baseline.",
+      "Building a food-science evaluation for GForceNet Flavor AI: domain correctness, useful formulation direction, failure types, and expert scoring against a fixed blind baseline.",
     meta: "GForceNet / Flavor AI · evaluation design · expert review",
   },
   {
-    number: "04",
+    number: "06",
     name: "Echograph",
     label: "LOCAL-FIRST AI · OPEN SOURCE",
     description:
-      "Turns twelve years of voice memos into a source-linked knowledge hypergraph, grounded retrieval system, and direct audio evidence layer.",
+      "For meeting recordings, medical dictation, and voice notes: normalize and transcribe audio, then use tonal intelligence to capture emotion and importance. Its hypergraph is my preferred RAG architecture—a working neural structure for order awareness and decision milestones that can become the PMO's oracle.",
     meta: "274 recordings · 5,107 statements · 75 tests",
     href: "https://github.com/meaganmckeever-mx3/echograph",
   },
   {
-    number: "05",
+    number: "07",
     name: "whatsoRAG",
     label: "ARCHITECTURE TOOL · LIVE",
     description:
@@ -44,21 +73,45 @@ const MORE_WORK = [
     href: "https://whatsorag.vercel.app",
   },
   {
-    number: "06",
+    number: "08",
     name: "Inkling for symbolic regression",
     label: "MODEL WORK · PRIVATE",
     description:
-      "Fine-tuning work that explores whether a general open-weight model can recover compact symbolic relationships from scientific data.",
-    meta: "Fine-tuning · symbolic regression · technical write-up pending",
+      "I fine-tuned Inkling for symbolic regression, exploring whether a general open-weight model could recover compact symbolic relationships from scientific data.",
+    meta: "Fine-tuning · symbolic regression · scientific ML",
   },
   {
-    number: "07",
+    number: "09",
     name: "VOID",
     label: "AI FOOD-SUSTAINABILITY COMPETITION · SIDE PROJECT",
     description:
-      "A circular data-center fermentation concept: model whether recoverable heat from liquid-cooled AI infrastructure can support brewing and distillation, with explicit assumptions and physics tests.",
-    meta: "Thermodynamics · circular systems · source-backed computation",
+      "A circular data-center fermentation concept: model whether recoverable heat from liquid-cooled AI infrastructure can support brewing and distillation, with explicit thermodynamics and source-backed assumptions.",
+    meta: "Thermodynamics · circular systems · tested computation",
     href: "https://github.com/meaganmckeever-mx3/data-center-distillery",
+  },
+];
+
+const EXPERIENCE = [
+  {
+    period: "2025—NOW",
+    company: "Samyang Foods",
+    role: "Food Technology Application Scientist · Netherlands",
+    description:
+      "Directing a four-year, €4.5M Digital R&D program reaching 7 FTE by 2030. I built a production protein, satiety, and nutrition application; local RAG and HyperGraphRAG systems; a structured scientific-data pipeline; and the path toward ML-enabled lab robotics.",
+  },
+  {
+    period: "2022—2025",
+    company: "Unilever Food Solutions · innocent drinks",
+    role: "Lead Process Technologist · Senior Process Technologist",
+    description:
+      "Applied ML, CFD, digital-twin modeling, SCADA, HMI, PID, and automation to thermal safety and manufacturing systems. Reduced batch time by 75%, increased blended production volume by 260%, and qualified all 16 recipes for a major process-transfer program.",
+  },
+  {
+    period: "2014—2022",
+    company: "FUL · Rip Van Wafels · B&G · Back to Nature · Covance / Eurofins",
+    role: "Food R&D, scale-up, manufacturing, and commercialization",
+    description:
+      "Tripled shelf life and raised consumer acceptability from 3/9 to 7/9; launched five SKUs contributing $2M in growth; created a $13M annualized platform while cutting manufacturing cost 50%; and managed an 86-SKU certification program across 22 co-packers and 100+ suppliers in five months.",
   },
 ];
 
@@ -99,78 +152,20 @@ function Tag({ children }: { children: React.ReactNode }) {
 
 function BuildingBuddyVisual() {
   return (
-    <div
-      aria-label="Abstract representation of the Building Buddy interface"
-      className="relative aspect-[16/11] overflow-hidden rounded-[1.6rem] bg-[#f4f0e5] p-3 text-[#242424] shadow-2xl shadow-black/25 sm:p-5"
-    >
-      <div className="flex h-full flex-col overflow-hidden rounded-xl border border-black/10 bg-[#fbfaf5]">
-        <div className="flex h-10 items-center gap-2 border-b border-black/10 px-3 sm:h-12 sm:px-4">
-          <span className="grid size-5 place-items-center rounded-md border border-black/20 text-[9px]">●</span>
-          <span className="text-[9px] font-semibold tracking-tight sm:text-xs">building·buddy</span>
-          <div className="ml-2 h-5 grow rounded-full bg-[#efede3] sm:ml-8 sm:h-7" />
-          <span className="size-5 rounded-full bg-[#ef6a42]" />
-        </div>
-        <div className="grid min-h-0 grow grid-cols-[23%_1fr]">
-          <div className="border-r border-black/10 bg-[#f6f3ea] p-2 sm:p-4">
-            {[
-              "Projects",
-              "Drive",
-              "Extraction",
-              "Knowledge",
-              "Notebook",
-            ].map((item, index) => (
-              <div
-                key={item}
-                className={`mb-1.5 rounded-md px-2 py-1.5 text-[6px] sm:text-[9px] ${
-                  index === 0 ? "bg-[#e9e5d9] font-semibold" : "text-black/50"
-                }`}
-              >
-                {item}
-              </div>
-            ))}
-          </div>
-          <div className="min-w-0 p-3 sm:p-5">
-            <div className="flex items-end justify-between">
-              <div>
-                <p className="text-[6px] uppercase tracking-[0.16em] text-black/40 sm:text-[8px]">
-                  Project command
-                </p>
-                <p className="mt-1 text-[11px] font-semibold sm:text-lg">P0 · Evidence spine</p>
-              </div>
-              <span className="rounded-full bg-[#e9f0de] px-2 py-1 text-[5px] text-[#58703f] sm:text-[7px]">
-                ON TRACK
-              </span>
-            </div>
-            <div className="mt-3 grid grid-cols-3 gap-1.5 sm:mt-5 sm:gap-3">
-              {[
-                ["Plan", "28 tasks"],
-                ["Sources", "traceable"],
-                ["Review", "human gate"],
-              ].map(([label, value]) => (
-                <div key={label} className="rounded-lg border border-black/10 bg-white p-2 sm:p-3">
-                  <p className="text-[5px] uppercase tracking-wider text-black/40 sm:text-[7px]">{label}</p>
-                  <p className="mt-1 text-[7px] font-medium sm:text-[10px]">{value}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-2.5 rounded-lg border border-black/10 bg-white p-2.5 sm:mt-4 sm:p-4">
-              <div className="mb-2 flex items-center justify-between">
-                <span className="text-[6px] font-semibold sm:text-[9px]">Extract → review → commit</span>
-                <span className="text-[5px] text-black/35 sm:text-[7px]">SOURCE PRESERVED</span>
-              </div>
-              <div className="grid grid-cols-4 gap-1 sm:gap-2">
-                {["INGEST", "PARSE", "REVIEW", "PUBLISH"].map((step, index) => (
-                  <div key={step}>
-                    <div className={`h-1.5 rounded-full ${index < 3 ? "bg-[#ef6a42]" : "bg-[#ded9ca]"}`} />
-                    <p className="mt-1 text-[4px] text-black/35 sm:text-[6px]">{step}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <figure className="overflow-hidden rounded-[1.6rem] bg-[#f4f0e5] shadow-2xl shadow-black/25">
+      <Image
+        src="/images/building-buddy-synthetic-gantt.png"
+        alt="Building Buddy Gantt interface showing a synthetic technical R&D project"
+        width={1586}
+        height={992}
+        sizes="(min-width: 1024px) 52vw, 100vw"
+        className="h-auto w-full"
+      />
+      <figcaption className="font-body flex items-center justify-between gap-4 border-t border-black/10 bg-[#fbfaf5] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-black/45 sm:text-[9px]">
+        <span>Real interface · synthetic demo data</span>
+        <span>Project command / Gantt</span>
+      </figcaption>
+    </figure>
   );
 }
 
@@ -241,14 +236,33 @@ function ProteinPalVisual() {
   );
 }
 
+function ThermalProcessVisual() {
+  return (
+    <figure className="overflow-hidden rounded-[1.6rem] bg-[#111b31] shadow-2xl shadow-black/30">
+      <Image
+        src="/images/combi-oven-thermal-reconstruction.png"
+        alt="Representative thermal reconstruction of a lidded gastronorm meal tray in a steam combi oven"
+        width={1672}
+        height={941}
+        sizes="(min-width: 1024px) 62vw, 100vw"
+        className="h-auto w-full"
+      />
+      <figcaption className="font-body flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-[#111b31] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-white/45 sm:text-[9px]">
+        <span>Representative reconstruction · not original solver output</span>
+        <span>Steam / condensation / internal cold region</span>
+      </figcaption>
+    </figure>
+  );
+}
+
 export default function Home() {
   return (
     <div className="w-full bg-[#17243e] text-[#efdfb4]">
       <a
-        href="#work"
+        href="#projects"
         className="sr-only z-50 rounded-full bg-[#efdfb4] px-4 py-2 text-[#17243e] focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
       >
-        Skip to work
+        Skip to projects
       </a>
 
       <section id="top" className="relative min-h-svh overflow-hidden" style={{ background: HERO_GRADIENT }}>
@@ -258,13 +272,19 @@ export default function Home() {
           <a
             href="#top"
             aria-label="Meagan McKeever, back to top"
-            className="font-display text-lg leading-none tracking-[0.15em]"
+            className="font-display text-base leading-none tracking-[0.15em] sm:text-lg"
           >
             MM
           </a>
-          <nav aria-label="Primary" className="font-body flex items-center gap-5 text-[10px] tracking-[0.18em] sm:gap-10 sm:text-[12px] sm:tracking-[0.28em]">
-            <a className="opacity-75 transition-opacity hover:opacity-100" href="#work">
-              WORK
+          <nav
+            aria-label="Primary"
+            className="font-body flex items-center gap-3 text-[8px] tracking-[0.08em] sm:gap-8 sm:text-[11px] sm:tracking-[0.2em]"
+          >
+            <a className="opacity-75 transition-opacity hover:opacity-100" href="#projects">
+              PROJECTS
+            </a>
+            <a className="opacity-75 transition-opacity hover:opacity-100" href="#experience">
+              EXPERIENCE
             </a>
             <a className="opacity-75 transition-opacity hover:opacity-100" href="#about">
               ABOUT
@@ -283,84 +303,101 @@ export default function Home() {
             className="font-display uppercase leading-[0.94]"
             style={{
               color: CREAM,
-              fontSize: "clamp(3.35rem, 8.7vw, 8.9rem)",
+              fontSize: "clamp(3.25rem, 8.3vw, 8.5rem)",
               letterSpacing: "0.005em",
             }}
           >
-            Meagan
+            Meagan M.
             <br />
             McKeever
           </h1>
-          <p className="font-body mt-8 max-w-[42rem] text-[17px] leading-[1.62] text-[#efdfb4]/85 sm:mt-10 sm:text-xl">
-            Food scientist, applied AI builder, and digital R&amp;D lead. I turn complex
-            scientific work into deployed products, evidence-linked systems, and infrastructure
-            that teams can actually use.
+          <p className="font-body mt-8 max-w-[52rem] text-[16px] leading-[1.65] text-[#efdfb4]/85 sm:mt-10 sm:text-xl">
+            Food scientist, applied AI builder, and digital R&amp;D lead. I create production
+            systems and scientific applications for R&amp;D teams, deploy and develop local
+            models, and architect the systems and strategy for a research division making
+            breakthrough discoveries in protein science, microstructures, plant-based nutrition,
+            and hydrogel systems.
           </p>
         </div>
 
-        <div className="font-body absolute inset-x-0 bottom-0 z-20 flex items-center justify-between px-6 pb-9 text-[9px] tracking-[0.24em] text-[#efdfb4]/55 sm:px-12 sm:text-[11px] sm:tracking-[0.3em]">
-          <span>NETHERLANDS · EMEA</span>
-          <a href="#work" className="hidden transition-colors hover:text-[#efdfb4] sm:inline">
-            SELECTED WORK ↓
+        <div className="font-body absolute inset-x-0 bottom-0 z-20 flex items-center justify-between px-6 pb-9 text-[9px] tracking-[0.2em] text-[#efdfb4]/55 sm:px-12 sm:text-[11px] sm:tracking-[0.3em]">
+          <span>NETHERLANDS · EUROPE · USA</span>
+          <a href="#projects" className="hidden transition-colors hover:text-[#efdfb4] sm:inline">
+            SELECTED PROJECTS ↓
           </a>
         </div>
       </section>
 
       <main>
-        <section id="work" className="relative overflow-hidden bg-[#1b2946]">
+        <section id="projects" className="relative overflow-hidden bg-[#1b2946]">
           <GrainOverlay />
           <div className="relative z-20 mx-auto max-w-7xl px-6 py-24 sm:px-12 sm:py-32">
-            <div className="grid gap-6 border-b border-[#efdfb4]/20 pb-12 lg:grid-cols-[1fr_1fr] lg:items-end">
+            <div className="grid gap-8 border-b border-[#efdfb4]/20 pb-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-end">
               <div>
                 <p className="font-body text-[10px] uppercase tracking-[0.25em] text-[#efdfb4]/55">
-                  Selected work
+                  Selected projects
                 </p>
-                <h2 className="font-display mt-4 max-w-2xl text-4xl uppercase leading-[1.02] sm:text-6xl">
-                  Scientific software, in use.
+                <h2 className="font-display mt-4 max-w-4xl text-4xl uppercase leading-[1.02] sm:text-6xl">
+                  Production systems and scientific software delivering ROI.
                 </h2>
               </div>
               <p className="font-body max-w-xl text-base leading-7 text-[#efdfb4]/68 lg:justify-self-end">
-                I build at the seam between a domain, a model, and the people who have to trust
-                the output. The system is not finished when the demo works; it is finished when
-                the evidence, workflow, and deployment work too.
+                For technical users, R&amp;D teams, and laboratory automation. I have defined a
+                strategy that applies emerging technology at every phase.
               </p>
             </div>
 
-            <article id="building-buddy" className="grid gap-12 border-b border-[#efdfb4]/20 py-20 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-20">
+            <div className="grid border-l border-t border-[#efdfb4]/20 sm:grid-cols-2 lg:grid-cols-4">
+              {DIGITAL_STRATEGY.map((item) => (
+                <div key={item.label} className="border-b border-r border-[#efdfb4]/20 p-6 sm:p-8">
+                  <p className="font-body text-[9px] uppercase tracking-[0.2em] text-[#f3a99c]">
+                    {item.label}
+                  </p>
+                  <p className="font-body mt-4 text-[14px] leading-6 text-[#efdfb4]/64">{item.text}</p>
+                </div>
+              ))}
+            </div>
+
+            <article
+              id="building-buddy"
+              className="grid gap-12 border-b border-[#efdfb4]/20 py-20 lg:grid-cols-[0.86fr_1.14fr] lg:items-center lg:gap-16"
+            >
               <div>
                 <div className="font-body flex items-center gap-4 text-[10px] tracking-[0.2em] text-[#f3a99c]">
                   <span>01</span>
                   <span className="h-px w-8 bg-current" />
-                  <span>PRIVATE R&amp;D SYSTEM · WORKING POC</span>
+                  <span>CLOUD APPLICATION · PRODUCT WORKSHOP</span>
                 </div>
                 <h3 className="font-display mt-6 text-4xl sm:text-6xl">Building Buddy</h3>
                 <p className="font-body mt-5 text-xl leading-8 text-[#efdfb4]/88 sm:text-2xl">
-                  Project command, document extraction, and cross-border scientific collaboration
-                  in one system.
+                  Project management, extraction pipeline, and collaborative R&amp;D workspace.
                 </p>
                 <p className="font-body mt-5 max-w-xl text-[15px] leading-7 text-[#efdfb4]/62 sm:text-base">
-                  I designed and built Building Buddy for a small Netherlands–Korea R&amp;D team.
-                  It connects tasks, dependencies, milestones, budgets, risks, source files,
-                  structured extraction, human review, collaborative notes, and bilingual
-                  workflows—so project status and scientific evidence stop living in separate
-                  worlds.
+                  Building Buddy combines project management and file extraction, with regulatory
+                  and PMO agents working across the inbox. It tracks CAPEX and project progress in
+                  a leadership-friendly dashboard. I use it to workshop features, refine scope and
+                  specifications, then actualize the strongest workflows in iOS and desktop
+                  applications.
                 </p>
                 <div className="font-body mt-8 flex flex-wrap gap-2 text-[#efdfb4]/75">
-                  <Tag>Next.js</Tag>
-                  <Tag>Supabase</Tag>
-                  <Tag>Extraction pipeline</Tag>
                   <Tag>Project management</Tag>
+                  <Tag>Extraction pipeline</Tag>
+                  <Tag>PMO agents</Tag>
+                  <Tag>Regulatory agents</Tag>
+                  <Tag>CAPEX</Tag>
                   <Tag>EN / KR</Tag>
-                  <Tag>E2E tested</Tag>
                 </div>
                 <p className="font-body mt-8 text-[10px] uppercase tracking-[0.2em] text-[#efdfb4]/45">
-                  Password-protected · client data not shown
+                  Private source · synthetic portfolio data
                 </p>
               </div>
               <BuildingBuddyVisual />
             </article>
 
-            <article id="protein-pal" className="grid gap-12 border-b border-[#efdfb4]/20 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20">
+            <article
+              id="protein-pal"
+              className="grid gap-12 border-b border-[#efdfb4]/20 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:items-center lg:gap-20"
+            >
               <div className="lg:order-2">
                 <div className="font-body flex items-center gap-4 text-[10px] tracking-[0.2em] text-[#d7b06f]">
                   <span>02</span>
@@ -376,6 +413,7 @@ export default function Home() {
                   software rules. Protein Pal combines ingredient data, formula building,
                   protein-quality calculations, nutrition labelling, and comparisons—keeping
                   exact calculations deterministic instead of asking a language model to guess.
+                  A headless application and MCP interface are in development.
                 </p>
                 <div className="font-body mt-8 flex flex-wrap gap-2 text-[#efdfb4]/75">
                   <Tag>React</Tag>
@@ -383,6 +421,7 @@ export default function Home() {
                   <Tag>Supabase</Tag>
                   <Tag>Vercel</Tag>
                   <Tag>Auditable rules</Tag>
+                  <Tag>Headless / MCP</Tag>
                 </div>
                 <a
                   href="https://proteinpal.app"
@@ -395,6 +434,42 @@ export default function Home() {
               </div>
               <div className="lg:order-1">
                 <ProteinPalVisual />
+              </div>
+            </article>
+
+            <article id="thermal-process" className="border-b border-[#efdfb4]/20 py-20">
+              <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-end lg:gap-20">
+                <div>
+                  <div className="font-body flex items-center gap-4 text-[10px] tracking-[0.2em] text-[#f3a99c]">
+                    <span>03</span>
+                    <span className="h-px w-8 bg-current" />
+                    <span>PHYSICAL MODELING · INDUSTRIAL FOOD SYSTEMS</span>
+                  </div>
+                  <h3 className="font-display mt-6 text-4xl sm:text-6xl">Heat penetration &amp; CFD</h3>
+                  <p className="font-body mt-5 text-xl leading-8 text-[#efdfb4]/88 sm:text-2xl">
+                    From condensing-film theory to cooking programs shipped with the product.
+                  </p>
+                </div>
+                <p className="font-body max-w-2xl text-[15px] leading-7 text-[#efdfb4]/62 sm:text-base lg:justify-self-end">
+                  For frozen vegan meals in lidded 2/3 or 1/1 GN trays, I mapped combi-oven
+                  programs in psychrometric space, developed a theory around condensing-film heat
+                  transfer, calculated product conductivity and heat-transfer coefficients, and
+                  built the 3D geometry in Blender. The programs took sauce, vegan-meat pieces,
+                  and vegetables from frozen to ready in 20 or 40 minutes while protecting color,
+                  texture, and microbiological safety.
+                </p>
+              </div>
+              <div className="font-body mt-8 flex flex-wrap gap-2 text-[#efdfb4]/75">
+                <Tag>Heat penetration</Tag>
+                <Tag>CFD</Tag>
+                <Tag>Psychrometrics</Tag>
+                <Tag>Condensing film</Tag>
+                <Tag>Blender geometry</Tag>
+                <Tag>120°C / 90% steam</Tag>
+                <Tag>2 m³/s convection</Tag>
+              </div>
+              <div className="mt-10">
+                <ThermalProcessVisual />
               </div>
             </article>
 
@@ -453,43 +528,43 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="about" className="relative overflow-hidden bg-[#f1e4c2] text-[#17243e]">
+        <section id="experience" className="relative overflow-hidden bg-[#d79b76] text-[#17243e]">
           <GrainOverlay />
           <div className="relative z-20 mx-auto max-w-7xl px-6 py-24 sm:px-12 sm:py-32">
-            <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
+            <div className="grid gap-8 border-b border-[#17243e]/20 pb-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
               <div>
-                <p className="font-body text-[10px] uppercase tracking-[0.25em] text-[#17243e]/55">About</p>
-                <h2 className="font-display mt-4 text-4xl uppercase leading-[1.03] sm:text-6xl">
-                  I did not leave science for software.
+                <p className="font-body text-[10px] uppercase tracking-[0.25em] text-[#17243e]/55">Experience</p>
+                <h2 className="font-display mt-4 text-4xl uppercase leading-[1.02] sm:text-6xl">
+                  Sixteen years of industrial R&amp;D.
                 </h2>
               </div>
-              <div className="font-body space-y-6 text-lg leading-8 text-[#17243e]/76">
-                <p>
-                  I learned to build because I kept finding important R&amp;D problems that
-                  available tools did not solve. Sixteen years in food science—from bench work
-                  and scale-up to manufacturing, portfolios, and commercial decisions—taught me
-                  what a system must preserve, what a model cannot invent, and what evidence a
-                  scientist needs before acting.
-                </p>
-                <p>
-                  Now I work end to end: define the problem, model the scientific truth, design
-                  the architecture, build and test the product, make the business case, and fight
-                  through the less glamorous identity, endpoint, network, security, and deployment
-                  decisions required to put it into real hands.
-                </p>
-                <p className="text-sm text-[#17243e]/55">
-                  BSc Food Science, Cornell University · Based in the Netherlands · Working across
-                  European and Korean teams
-                </p>
-              </div>
+              <p className="font-body max-w-xl text-base leading-7 text-[#17243e]/68 lg:justify-self-end">
+                Food science, processing, manufacturing, commercialization, and applied AI—across
+                laboratories, production lines, co-manufacturers, suppliers, and executive teams.
+              </p>
             </div>
 
-            <div className="mt-20 grid border-l border-t border-[#17243e]/20 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="divide-y divide-[#17243e]/20">
+              {EXPERIENCE.map((item) => (
+                <article key={item.company} className="grid gap-6 py-10 lg:grid-cols-[0.22fr_0.78fr_1.25fr] lg:gap-12">
+                  <p className="font-body text-[10px] tracking-[0.18em] text-[#17243e]/48">{item.period}</p>
+                  <div>
+                    <h3 className="font-display text-2xl leading-tight sm:text-3xl">{item.company}</h3>
+                    <p className="font-body mt-2 text-[10px] uppercase leading-5 tracking-[0.13em] text-[#17243e]/52">
+                      {item.role}
+                    </p>
+                  </div>
+                  <p className="font-body text-[15px] leading-7 text-[#17243e]/72 sm:text-base">{item.description}</p>
+                </article>
+              ))}
+            </div>
+
+            <div className="mt-6 grid border-l border-t border-[#17243e]/20 sm:grid-cols-2 lg:grid-cols-4">
               {[
-                ["16", "years in science & innovation"],
-                ["$13M", "annualized product platform"],
-                ["−50%", "manufacturing cost"],
-                ["$1M", "annual raw-material savings"],
+                ["€4.5M", "Digital R&D roadmap"],
+                ["−75%", "batch time"],
+                ["+260%", "production volume"],
+                ["$13M", "annualized platform"],
               ].map(([value, label]) => (
                 <div key={label} className="border-b border-r border-[#17243e]/20 p-7 sm:p-9">
                   <p className="font-display text-4xl sm:text-5xl">{value}</p>
@@ -498,6 +573,67 @@ export default function Home() {
                   </p>
                 </div>
               ))}
+            </div>
+
+            <div className="font-body mt-12 flex flex-wrap gap-x-8 gap-y-3 text-[9px] uppercase leading-5 tracking-[0.14em] text-[#17243e]/48">
+              <span>Co-inventor · WO2012112700A2</span>
+              <span>IFTSA / Disney · First place</span>
+              <span>IFTSA / Mars · First place</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="about" className="relative overflow-hidden bg-[#f1e4c2] text-[#17243e]">
+          <GrainOverlay />
+          <div className="relative z-20 mx-auto max-w-7xl px-6 py-24 sm:px-12 sm:py-32">
+            <div className="grid gap-12 lg:grid-cols-[0.82fr_1.18fr] lg:gap-24">
+              <div>
+                <p className="font-body text-[10px] uppercase tracking-[0.25em] text-[#17243e]/55">About</p>
+                <h2 className="font-display mt-4 text-4xl uppercase leading-[1.03] sm:text-6xl">
+                  A smarter standard for scientific work.
+                </h2>
+              </div>
+              <div>
+                <div className="font-body space-y-6 text-lg leading-8 text-[#17243e]/76">
+                  <p>
+                    The acceleration of technology has made it possible to create custom tools very
+                    quickly, suited to the needs we as scientists experience daily. I have embraced
+                    coding, building, and leveraging agents to help deliver a vision of a smarter
+                    standard.
+                  </p>
+                  <p>
+                    Currently I cover the work end to end to transform our division&apos;s capabilities
+                    and toolkit. I have learned to navigate across cultures, communication styles,
+                    and ranks. I am very happy with the change I have been able to bring about, and I
+                    am hopeful my own projects may also drive good working habits and a culture of
+                    innovation. My daily work now includes IT systems, security, endpoint management,
+                    and executive communication.
+                  </p>
+                </div>
+
+                <a
+                  href="https://www.cornell.edu/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-12 grid overflow-hidden border border-[#17243e]/20 bg-[#f7ecd0] transition-colors hover:bg-white/35 sm:grid-cols-[9rem_1fr]"
+                  aria-label="Bachelor of Science in Food Science from Cornell University"
+                >
+                  <span className="grid min-h-36 place-items-center bg-[#b31b1b] p-6">
+                    <Image
+                      src="/images/cornell-seal-white.svg"
+                      alt="Cornell University seal"
+                      width={104}
+                      height={104}
+                      className="size-24"
+                    />
+                  </span>
+                  <span className="flex flex-col justify-center p-7 sm:p-9">
+                    <span className="font-body text-[9px] uppercase tracking-[0.18em] text-[#17243e]/48">Education</span>
+                    <span className="font-display mt-3 text-3xl leading-tight">Cornell University</span>
+                    <span className="font-body mt-2 text-sm text-[#17243e]/62">Bachelor of Science · Food Science</span>
+                  </span>
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -509,11 +645,18 @@ export default function Home() {
           <div>
             <p className="font-body text-[10px] uppercase tracking-[0.25em] text-[#efdfb4]/60">Contact</p>
             <h2 className="font-display mt-5 max-w-4xl text-5xl uppercase leading-[0.98] sm:text-7xl lg:text-8xl">
-              Let&apos;s make difficult science usable.
+              Please reach out.
             </h2>
+            <p className="font-body mt-7 text-base text-[#efdfb4]/65">Using the contact information below.</p>
           </div>
           <div className="mt-20 flex flex-col gap-8 border-t border-[#efdfb4]/30 pt-8 sm:flex-row sm:items-end sm:justify-between">
-            <div className="font-body flex flex-wrap gap-x-8 gap-y-4 text-xs tracking-[0.16em]">
+            <div className="font-body flex flex-wrap gap-x-8 gap-y-4 text-xs tracking-[0.14em]">
+              <a
+                href="mailto:mckeever.meagan@gmail.com"
+                className="border-b border-transparent pb-1 transition-colors hover:border-[#efdfb4]"
+              >
+                EMAIL <Arrow />
+              </a>
               <a
                 href="https://github.com/meaganmckeever-mx3"
                 target="_blank"
@@ -532,7 +675,7 @@ export default function Home() {
               </a>
             </div>
             <p className="font-body text-[9px] tracking-[0.18em] text-[#efdfb4]/45">
-              MEAGAN MCKEEVER · 2026
+              MEAGAN M. MCKEEVER · 2026
             </p>
           </div>
         </div>
