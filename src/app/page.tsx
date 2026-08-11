@@ -97,7 +97,7 @@ const MORE_WORK = [
 const EXPERIENCE = [
   {
     period: "2025—NOW",
-    company: "Samyang Foods",
+    company: "Samyang Foods Inc.",
     role: "Food Technology Application Scientist · Netherlands",
     description:
       "Directing a four-year, €4.5M Digital R&D program reaching 7 FTE by 2030. I built a production protein, satiety, and nutrition application; local RAG and HyperGraphRAG systems; a structured scientific-data pipeline; and the path toward ML-enabled lab robotics.",
